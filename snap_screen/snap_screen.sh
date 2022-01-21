@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Appends a function into .bashrc file to take screenshots on emulator via ADB
+# Author: Ariel Lima Andrade
 
 cat >> ~/.bashrc << EOT
 
