@@ -15,29 +15,15 @@ get_microphone_device() {
     echo $(pactl info | sed -En 's/Default Source: (.*)/\1/p')
 }
 
-get_microphone_index() {
-    echo $(pactl list short sources | grep $1 | sed -e 's,^\([0-9][0-9]*\)[^0-9].*,\1,')
-}
-
-get_microphone_volume() {
-    echo $(pactl list sources | grep '^[[:space:]]Volume:' | head -n $(( $1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')
-}
-
 while true
 do 
-    LAST_MICROPHONE_VOLUME=$(get_microphone_volume $(get_microphone_index $(get_microphone_device)))
-    echo "last " $LAST_MICROPHONE_VOLUME
     sleep 0.1 
     result=`ps -A | grep qemu-system-x86`
     while [ ! -z "$result" ]
     do
         sleep 0.1
-        CURRENT_MICROPHONE_VOLUME=$(get_microphone_volume $(get_microphone_index $(get_microphone_device)))
-        echo "current " $CURRENT_MICROPHONE_VOLUME
-        if [ $CURRENT_MICROPHONE_VOLUME -ge $LAST_MICROPHONE_VOLUME ]
-        then
-            pacmd set-source-volume $(get_microphone_device) $(map_range $LAST_MICROPHONE_VOLUME)
-        fi
+        MVS_VOLUME_TARGET=$(<volume.conf)
+        pacmd set-source-volume $(get_microphone_device) $(map_range $MVS_VOLUME_TARGET)
         result=`ps -A | grep qemu-system-x86`
     done  
 done
