@@ -19,3 +19,7 @@ source ~/.bashrc
 This is a tool to take screenshots from Android Emulator in an easy way using the terminal. The screenshots are saved automatically with a custom name or you can set the output filename as you prefer. Before installing this tool, it's necessary to have the previous alias added in your `.bashrc` file in case you don't have ADB installed and want to use the one from AOSP build. <br>
 #### [Get snap_screen](https://github.com/sudoariel/AOSP-Tools/tree/main/snap_screen)
 
+## mic_volume_stabilizer
+This is a tool to avoid Android Emulator changing the host machine microphone volume randomly causing undesirable noises on Ubuntu 20.04. <br>
+#### [Get snap_screen](https://github.com/sudoariel/Android-Emulator-MicVolumeStabilizer)
+
