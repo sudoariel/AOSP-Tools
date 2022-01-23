@@ -2,7 +2,7 @@
 AOSP (Android Open Source Project) tools in shell script for Linux to make the work easier.
 
 ## AOSP alias
-In order to set the AOSP environment quickly you can add an alias in your `.bashrc` file to run a simple command to navigate to the AOSP folder, set the environment and run the lunch command. Append the following line in your `.bashrc`file:
+In order to set the AOSP environment quickly you can add an alias in your `.bashrc` file to run a simple command to navigate to the AOSP folder, set the environment and run the lunch command. Append the following line in your `.bashrc` file:
 ```
 alias AOSP='cd $HOME/WORKING_ENVIRONMENT; source build/envsetup.sh; lunch YOUR_COMBO_VERSION; cd $OLDPWD'
 ```

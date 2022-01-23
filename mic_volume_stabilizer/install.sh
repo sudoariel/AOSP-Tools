@@ -1,3 +1,5 @@
+# Author: Ariel Lima Andrade
+
 DIR="$HOME/mic_volume_stabilizer"
 echo "Creating folder $DIR"
 mkdir -p $DIR

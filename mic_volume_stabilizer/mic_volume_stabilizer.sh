@@ -4,6 +4,8 @@
 # and forcing the microphone volume to be fixed, avoiding the annoying noise when 
 # you're in a meeting due to the changes in the volume by the emulator. 
 
+# Author: Ariel Lima Andrade
+
 map_range() {
     value=$1
     target_range_max=65535
